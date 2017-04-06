@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="
-http://www.springframework.org/schema/beans 
-http://www.springframework.org/schema/beans/spring-beans.xsd
-http://www.springframework.org/schema/context 
-http://www.springframework.org/schema/context/spring-context.xsd
-http://www.springframework.org/schema/tx 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/tx 
 http://www.springframework.org/schema/tx/spring-tx.xsd">
-
-
 	<context:annotation-config />
-	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+		destroy-method="close">
 		<property name="driverClassName" value="org.h2.Driver" />
 		<property name="url" value="jdbc:h2:tcp://localhost/~/Avikazi" />
 		<property name="username" value="sa" />
@@ -40,15 +37,11 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-
-
-	<tx:annotation-driven/>
-
-	
-
-<bean id="pd" class="com.niit.Daoimpl.productimpl" />
-
-
-
-
+	<tx:annotation-driven />
+	<bean id="pd" class="com.niit.Daoimpl.productimpl" />
+	<bean id="ud" class="com.niit.Daoimpl.udaoimpl" />
+	<bean id="cd" class="com.niit.Daoimpl.cartdaoimpl" />
+	<bean id="cod" class="com.niit.Daoimpl.complaindaoimpl" />
+	<bean id="sd" class="com.niit.Daoimpl.shippingdaoimpl" />
+	<bean id="od" class="com.niit.Daoimpl.orderdaoimpl" />
 </beans>

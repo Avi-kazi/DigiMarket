@@ -29,7 +29,7 @@ public class productimpl implements productdao {
 	}
 
 	public product getid(int id) {
-		return (product)sessionFactory.getCurrentSession().get(product.class,id);
+		return sessionFactory.getCurrentSession().get(product.class,id);
 	}
 
 	public void updatepro(product p) {

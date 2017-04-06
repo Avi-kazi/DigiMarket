@@ -19,14 +19,30 @@ public class product {
 	private String proname;
 	private double proprice;
 	private String procategory;
+	private String prodetails;
+	@Transient
+	 MultipartFile File;
+	private String myurl;
+
+public String getMyurl() {
+		return myurl;
+	}
+	public void setMyurl(String myurl) {
+		this.myurl = myurl;
+	}
+public String getProdetails() {
+		return prodetails;
+	}
+	public void setProdetails(String prodetails) {
+		this.prodetails = prodetails;
+	}
 public String getProcategory() {
 		return procategory;
 	}
 	public void setProcategory(String procategory) {
 		this.procategory = procategory;
 	}
-@Transient
-	 MultipartFile File;
+
 	public MultipartFile getFile() {
 		return File;
 	}
